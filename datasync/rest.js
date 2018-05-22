@@ -35,31 +35,9 @@ var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : 'root',
-    database:'Teams'
+    database:'teamsdb'
 });
 connection.connect();
-
-/*app.use(function(req,res,next){
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    global.connection = mysql.createConnection({
-        host:'localhost',
-        user:'root',
-        password:'root',
-        database:'citydb'
-    });
-    connection.connect();
-    next();
-});
-*/
-// create rest get
-
-
-
-
-// Add City
-
-
 
 
 var server = app.listen(8082,function(){

@@ -26,10 +26,6 @@ app.post('/addteams',function(req,res){
   
 });
 
-app.use(express.static('public'));
-
-
-// Connect to mysql 
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',

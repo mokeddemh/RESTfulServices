@@ -23,10 +23,10 @@ app.get('/getlistcities',function(req,res){
 });
 
 app.get('/getcitydetail/:id',function(req,res){  
-    var query = "select name,touristNumber,imageurl as detailImage,description,"+
-    "GROUP_CONCAT(placename) as places from city natural join cityimage natural join place"+ 
+    var query = "select imageurl as detailImage,description, GROUP_CONCAT(placename) as places"+
+    " from city natural join cityimage natural join place"+ 
     " where imagetype='detail' and idCity=?" + 
-    " group by name,touristNumber, detailImage,description";
+    " group by detailImage,description";
     connection.query(query,[req.params.id],function(error,results){
     if (error) throw error;
     res.send(JSON.stringify(results[0]));
